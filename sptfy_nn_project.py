@@ -263,7 +263,7 @@ y_pred
 
 # this block of code evaluates feature importance by retraining models
 
-# ------------------ NOT RUN !!! ------------------------------
+# ------------------ NOT RUN FROM HERE !!! ------------------------------
 
 # get the performance metrics from the baseline model (Model II)
 overall_acc = round(model.evaluate(x_test,  y_test, verbose=2)[1],3)
@@ -309,6 +309,8 @@ model_acc
 feature_imp = pd.concat([model_acc["overall_acc"]/model_acc.loc["full model","overall_acc"],
            model_acc["top_song_acc"]/model_acc.loc["full model","top_song_acc"],
            model_acc["fp_nonTop"]/model_acc.loc["full model","fp_nonTop"]], axis = 1)
+
+# ------------------ NOT RUN UNTILL HERE !!! ------------------------------
 
 #%% PLOT FEATURE IMPORTANCE 
 feature_imp = pd.read_csv(path+"/feature_imp.csv")
