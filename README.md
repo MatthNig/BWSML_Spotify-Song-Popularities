@@ -4,5 +4,5 @@ This project was developed for the Bern Winter School on Machine Learning from t
 
 This repository features a presentation of the results as well as the data and code that has been used for this project. 
 
-The project is a fun project with no deeper meaning. It's purpose was to try out Neural Networks and Tensorflow.
+Note that this is a fun project with no real meaning. It's purpose was to try out Neural Networks and Tensorflow.
 
