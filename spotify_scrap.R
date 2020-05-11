@@ -2,12 +2,12 @@ library("spotifyr")
 library("dplyr")
 
 # specify authenticication key:
-client_id <- 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+client_id <- 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx' # set your client_id here
 Sys.setenv(SPOTIFY_CLIENT_ID = client_id)
 Sys.setenv(SPOTIFY_CLIENT_SECRET = client_id)
 access_token <- get_spotify_access_token()
 
-# load artist names:
+# load artist names from kaggle dataset:
 artist_album <- read.csv(paste(getwd(), "/artist_album.csv", sep = ""), stringsAsFactors = FALSE)
 artists <- as.character(unique(artist_album$artist_name))
 
@@ -40,7 +40,8 @@ release_date_fun <- function(artist){
 
 # ---------------------- NOT RUN -------------------------------------
 # get album release information of all songs from kaggle dataset:
-# artist_list <- lapply(artists[1:10],function(x) release_date_fun(x))
+                       
+# artist_list <- lapply(artists, function(x) release_date_fun(x))
 # artist_list <- bind_rows(artist_list)
 
 
@@ -115,17 +116,17 @@ df <- rbind(df, tmp[1, vars])
 df$artist_name <- c("Pearl Jam", "Nine Inch Nails", "The Weekend", "Dua Lipa", "Katy Perry",
                     "Rolling Stones", "Lady Gaga")
 
+                       
 # Check structure ----------------------------------------------------------
-
 # df ordering copied from .py code structure
-nT<-c('song_name', 'song_popularity', 'song_duration_ms', 'acousticness',
-      'danceability', 'energy', 'instrumentalness', 'key', 'liveness',
-      'loudness', 'audio_mode', 'speechiness', 'tempo', 'time_signature',
-      'audio_valence', 'song_pop_class', 'top_song')
+# nT<-c('song_name', 'song_popularity', 'song_duration_ms', 'acousticness',
+#      'danceability', 'energy', 'instrumentalness', 'key', 'liveness',
+#      'loudness', 'audio_mode', 'speechiness', 'tempo', 'time_signature',
+#      'audio_valence', 'song_pop_class', 'top_song')
 
-nT <- nT[-c(2,16,17)]
+# nT <- nT[-c(2,16,17)]
 tmp <- c("song_name","song_duration_ms","acousticness","danceability",
-               "energy", "instrumentalness", "key", "liveness", "loudness",
-               "audio_mode", "speechiness", "tempo", "time_signature", "audio_valence")
-tmp == nT
+              "energy", "instrumentalness", "key", "liveness", "loudness",
+              "audio_mode", "speechiness", "tempo", "time_signature", "audio_valence")
+# tmp == nT
 names(df) <- tmp
