@@ -6,7 +6,7 @@ This project was developed for the [Bern Winter School on Machine Learning](http
 
 ## Thoughts and conclusions
 
-The accuracies of these models were around 70%, which indicates that the networks are somewhat able to differentiate between popular and non-popular songs. Better performance could be expected by applying the approach to specific music genres or decades. This would require building a different dataset, which was outside the scope of this project. Ultimately, I would expect to have a much better performance when changing the features. Instead of relying on song characteristics, one could use the actual signal of songs. This would capture things like the actual speed, melody etc. of a song, which I would expect to be the most important predictors for song popularities. Such data could be used for a CNNs or LSTMs.
+The accuracies of these models were around 70%, which indicates that the networks are somewhat able to differentiate between popular and non-popular songs. Better performance could be expected by applying the approach to specific music genres or decades. This would require building a different dataset, which was outside the scope of this project. Ultimately, I would expect to have a much better performance when changing the features. Instead of relying on relatively broad song characteristics, one could use the sound signal of songs. This should better capture things like the actual speed, voice, melody etc. of a song. I would expect these things to be the most important predictors for song popularities. Such data could be used as inputs for CNNs and LSTMs.
 
 ## Material
 The repository contains the following material:
